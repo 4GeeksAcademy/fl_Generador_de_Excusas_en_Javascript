@@ -1,14 +1,14 @@
-import "./style.css";
-
-window.onload = function() {
-  document.querySelector("#excusa").innerHtml = generadorExcusas();
-  console.log(Hello!);
+window.onload = () => {
+  document.querySelector("#btn").addEventListener("click", () => {
+    document.querySelector("#the-excuse").innerHTML = genereteExcuse();
+  });
+  console.log("Hello!");
 };
 
-let generadorExcusas = () => {
+let genereteExcuse = () => {
   let who = ["The dog", "My grandma", "His turtle", "My bird"];
   let action = ["ate", "peed", "crushed", "broke"];
-  let what = ["my homework", "the keys", "the car"];
+  let what = ["my homework", "thethe keys", "the car"];
   let when = [
     "before the class",
     "right on time",
@@ -17,18 +17,18 @@ let generadorExcusas = () => {
     "while I was praying"
   ];
 
-  let whoRandom = Math.floor(Math.random() * who.length);
-  let actionRandom = Math.floor(Math.random() * action.length);
-  let whatRandom = Math.floor(Math.random() * what.length);
-  let whenRandom = Math.floor(Math.random() * when.length);
+  let whoIndx = Math.floor(Math.random() * who.length);
+  let actionIndx = Math.floor(Math.random() * action.length);
+  let whatIndx = Math.floor(Math.random() * what.length);
+  let whenIndx = Math.floor(Math.random() * when.length);
 
   return (
-    who[whoRandom] +
+    who[whoIndx] +
+    " " +
+    action[actionIndx] +
+    " " +
+    what[whatIndx] +
     "" +
-    action[actionRandom] +
-    "" +
-    what[whatRandom] +
-    "" +
-    when[whenRandom]
+    when[whenIndx]
   );
 };
